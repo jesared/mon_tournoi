@@ -45,6 +45,8 @@ export default function Navbar() {
             </button>
             <Link href="/" className="flex ms-2 md:me-24">
               <Image
+                width={32}
+                height={32}
                 src="/logo.svg"
                 className="h-8 me-3"
                 alt="Mon tournoi Logo"
@@ -66,6 +68,8 @@ export default function Navbar() {
                   >
                     <span className="sr-only">Open user menu</span>
                     <Image
+                      width={32}
+                      height={32}
                       className="w-8 h-8 rounded-full"
                       src={
                         session.user?.image ||
