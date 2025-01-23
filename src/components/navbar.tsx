@@ -8,9 +8,16 @@ import { useState } from "react";
 export default function Navbar() {
   const { data: session, status } = useSession();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
+  };
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+    const sidebar = document.getElementById("logo-sidebar");
+    sidebar?.classList.toggle("translate-x-0");
+    sidebar?.classList.toggle("-translate-x-full");
   };
   const closeDropdown = () => {
     setIsDropdownOpen(false);
