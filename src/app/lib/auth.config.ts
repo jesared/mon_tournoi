@@ -15,7 +15,7 @@ const authConfig: NextAuthOptions = {
   ],
   pages: {
     signIn: "/login",
-    signOut: "/api/auth/signout",
+    signOut: "/",
     error: "/error",
   },
   callbacks: {

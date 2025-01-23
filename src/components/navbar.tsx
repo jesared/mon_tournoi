@@ -1,6 +1,6 @@
 "use client";
 
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -107,13 +107,15 @@ export default function Navbar() {
                           </Link>
                         </li>
                         <li>
-                          <Link
-                            href="/api/auth/signout"
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                            onClick={closeDropdown}
+                          <button
+                            onClick={() => {
+                              closeDropdown();
+                              signOut({ callbackUrl: "/" });
+                            }}
+                            className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                           >
-                            Logout
-                          </Link>
+                            Déconnexion
+                          </button>
                         </li>
                       </ul>
                     </div>
