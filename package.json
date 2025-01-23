@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
+    "deploy": "deploy.bat",
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
