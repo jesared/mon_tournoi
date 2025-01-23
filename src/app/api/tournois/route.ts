@@ -16,7 +16,7 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
-    const { title, location, date, level } = await req.json();
+    const { title, location, date } = await req.json();
     const newTournoi = await prisma.tournoi.create({
       data: {
         name: title,

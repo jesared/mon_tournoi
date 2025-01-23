@@ -1,6 +1,7 @@
 "use client";
 
 import { useSession } from "next-auth/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -43,7 +44,7 @@ export default function Navbar() {
               </svg>
             </button>
             <Link href="/" className="flex ms-2 md:me-24">
-              <img
+              <Image
                 src="/logo.svg"
                 className="h-8 me-3"
                 alt="Mon tournoi Logo"
@@ -64,7 +65,7 @@ export default function Navbar() {
                     onClick={toggleDropdown}
                   >
                     <span className="sr-only">Open user menu</span>
-                    <img
+                    <Image
                       className="w-8 h-8 rounded-full"
                       src={
                         session.user?.image ||
