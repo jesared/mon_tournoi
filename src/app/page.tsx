@@ -9,7 +9,6 @@ export default function Home() {
         <h1 className="text-2xl font-bold mb-6">Bienvenue sur Ping Quest</h1>
         <div className="flex flex-col items-center space-y-4">
           <Image
-            className="dark:invert"
             src="/logo.svg"
             alt="Ping Quest logo"
             width={180}
