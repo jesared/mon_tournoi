@@ -42,11 +42,12 @@ export default function TournoiTemplate() {
   if (error) {
     return <div>{error}</div>;
   }
-
   return (
     <>
-      <h1>Liste des Tournois</h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">
+        Liste des tournois
+      </h2>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
         {tournois.map((tournoi) => (
           <div key={tournoi.id}>
             <a
@@ -57,7 +58,13 @@ export default function TournoiTemplate() {
                 {tournoi.name}
               </h5>
               <p className="font-normal text-gray-700 dark:text-gray-400">
-                Date: {tournoi.date}
+                Date:{" "}
+                {new Date(tournoi.date).toLocaleDateString("fr-FR", {
+                  weekday: "long",
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
               </p>
               <p className="font-normal text-gray-700 dark:text-gray-400">
                 Lieu: {tournoi.location}
