@@ -44,17 +44,28 @@ export default function TournoiTemplate() {
   }
 
   return (
-    <div>
+    <>
       <h1>Liste des Tournois</h1>
-      <ul>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {tournois.map((tournoi) => (
-          <li key={tournoi.id}>
-            <h2>{tournoi.name}</h2>
-            <p>Date: {tournoi.date}</p>
-            <p>Lieu: {tournoi.location}</p>
-          </li>
+          <div key={tournoi.id}>
+            <a
+              href="#"
+              className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+            >
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                {tournoi.name}
+              </h5>
+              <p className="font-normal text-gray-700 dark:text-gray-400">
+                Date: {tournoi.date}
+              </p>
+              <p className="font-normal text-gray-700 dark:text-gray-400">
+                Lieu: {tournoi.location}
+              </p>
+            </a>
+          </div>
         ))}
-      </ul>
-    </div>
+      </div>
+    </>
   );
 }
